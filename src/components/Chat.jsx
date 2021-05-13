@@ -3,7 +3,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import NoProfile from '../assets/img/no-profile.png';
-import Torahack from '../assets/img/torahack.png';
+import Uma from '../assets/img/uma.png';
 
 
 const Chat = (props) => {
@@ -14,7 +14,7 @@ const Chat = (props) => {
         <ListItem className={classes}>
             <ListItemAvatar>
                 {isQuestion ? (
-                    <Avatar alt="icon" src={ Torahack } />
+                    <Avatar alt="icon" src={ Uma } />
                 ) : (
                     <Avatar alt="icon" src={ NoProfile } />
                 )}

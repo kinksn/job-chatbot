@@ -8,16 +8,16 @@ import TextInput from './TextInput';
 
 const FormDialog = (props) => {
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+    // const [email, setEmail] = useState('');
     const [description, setDescription] = useState('');
 
     const inputName = useCallback( e => {
         setName(e.target.value)
     }, [setName])
 
-    const inputEmail = useCallback( e => {
-        setEmail(e.target.value)
-    }, [setEmail])
+    // const inputEmail = useCallback( e => {
+    //     setEmail(e.target.value)
+    // }, [setEmail])
 
     const inputDescription = useCallback( e => {
         setDescription(e.target.value)
@@ -28,11 +28,11 @@ const FormDialog = (props) => {
         const payload = {
             text: 'お問い合わせがありました\n' +
                   'お名前：' + name + '\n' +
-                  'Email：' + email + '\n' +
+                //   'Email：' + email + '\n' +
                   'お問い合わせ内容' + '\n' + description
         }
 
-        const url = 'https://hooks.slack.com/services/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';
+        const url = 'https://hooks.slack.com/services/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';
 
         fetch(url, {
             method: 'POST',
@@ -40,7 +40,7 @@ const FormDialog = (props) => {
         }).then(() => {
             alert('送信が完了しました、追ってご連絡します！')
             setName('')
-            setEmail('')
+            // setEmail('')
             setDescription('')
             return props.handleClose()
         })
@@ -63,14 +63,14 @@ const FormDialog = (props) => {
                     type={'text'}
                     onChange={inputName}
                 />
-                <TextInput
+                {/* <TextInput
                     label={'メールアドレス（必須）'}
                     multiline={false}
                     rows={1}
                     value={email}
                     type={'email'}
                     onChange={inputEmail}
-                />
+                /> */}
                 <TextInput
                     label={'お問い合わせ内容（必須）'}
                     multiline={true}
